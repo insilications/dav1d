@@ -4,9 +4,9 @@
 #
 Name     : dav1d
 Version  : 0.8.2
-Release  : 2
-URL      : https://code.videolan.org/videolan/dav1d/-/archive/0.8.2/dav1d-0.8.2.tar.gz
-Source0  : https://code.videolan.org/videolan/dav1d/-/archive/0.8.2/dav1d-0.8.2.tar.gz
+Release  : 3
+URL      : https://downloads.videolan.org/pub/videolan/dav1d/0.8.2/dav1d-0.8.2.tar.xz
+Source0  : https://downloads.videolan.org/pub/videolan/dav1d/0.8.2/dav1d-0.8.2.tar.xz
 Summary  : No detailed summary available
 Group    : Development/Tools
 License  : BSD-2-Clause
@@ -70,7 +70,7 @@ export http_proxy=http://127.0.0.1:9/
 export https_proxy=http://127.0.0.1:9/
 export no_proxy=localhost,127.0.0.1,0.0.0.0
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1614041087
+export SOURCE_DATE_EPOCH=1614045009
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
