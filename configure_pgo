@@ -1,0 +1,6 @@
+-Ddefault_library=both
+-Denable_asm=true
+-Denable_avx512=false
+-Denable_tools=true
+-Denable_tests=false
+-Dtestdata_tests=false

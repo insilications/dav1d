@@ -1,2 +1,43 @@
 # This file contains additional build requirements that did not get
-# picked up automatically. One name per line, no whitespace.
+# picked up automatically. One name per line, no whitespace.binutils-dev
+buildreq-cmake
+buildreq-meson
+doxygen
+elfutils-dev
+findutils
+gcc
+gcc-dev
+gcc-libs-math
+gcc-libstdc++32
+gcc-libubsan
+gcc-locale
+gflags-dev
+glibc-dev
+glibc-staticdev
+googletest-dev
+graphviz
+libedit
+libedit-dev
+libffi-dev
+libffi-staticdev
+libgcc1
+libstdc++
+libxml2-dev
+libxml2-staticdev
+lzo-dev
+lzo-staticdev
+mesa-dev
+nasm
+nasm-bin
+ncurses-dev
+ninja
+python3-dev
+python3-staticdev
+xz-dev
+xz-staticdev
+yaml-cpp
+yaml-cpp-dev
+Z3-dev
+Z3-staticdev
+zlib-dev
+zlib-staticdev
