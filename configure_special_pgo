@@ -1,4 +1,4 @@
--Ddefault_library=static
+-Ddefault_library=shared
 -Denable_asm=true
 -Denable_avx512=false
 -Denable_tools=true
