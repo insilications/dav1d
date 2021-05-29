@@ -5,7 +5,7 @@
 %define keepstatic 1
 Name     : dav1d
 Version  : 0.9.0
-Release  : 5
+Release  : 6
 URL      : file:///aot/build/clearlinux/packages/dav1d/dav1d-v0.9.0.tar.gz
 Source0  : file:///aot/build/clearlinux/packages/dav1d/dav1d-v0.9.0.tar.gz
 Source1  : file:///aot/build/clearlinux/packages/dav1d/dav1d-test-data-v0.9.0.tar.gz
@@ -118,7 +118,7 @@ unset https_proxy
 unset no_proxy
 export SSL_CERT_FILE=/var/cache/ca-certs/anchors/ca-certificates.crt
 export LANG=C.UTF-8
-export SOURCE_DATE_EPOCH=1621413802
+export SOURCE_DATE_EPOCH=1622280763
 export GCC_IGNORE_WERROR=1
 export AR=gcc-ar
 export RANLIB=gcc-ranlib
@@ -181,7 +181,7 @@ ninja --verbose %{?_smp_mflags} -v -C builddir
 pushd builddir
 meson test --verbose --num-processes 16 || :
 popd
-find builddir/ -type f,l -not -name '*.gcno' -not -name 'statuspgo*' -delete -print
+find builddir/ -type f,l -not -name '*.gcno' -not -name 'statuspgo*' -delete -print  || :
 export CFLAGS="${CFLAGS_USE}"
 export CXXFLAGS="${CXXFLAGS_USE}"
 export FFLAGS="${FFLAGS_USE}"
@@ -276,6 +276,10 @@ pushd ../build-special/
 DESTDIR=%{buildroot} ninja -C builddir install
 popd
 DESTDIR=%{buildroot} ninja -C builddir install
+## install_append content
+install -dm 0755 %{buildroot}/usr/lib64/haswell/ || :
+cp --archive %{buildroot}/usr/lib64/lib*.so* %{buildroot}/usr/lib64/haswell/ || :
+## install_append end
 
 %files
 %defattr(-,root,root,-)
@@ -292,11 +296,14 @@ DESTDIR=%{buildroot} ninja -C builddir install
 /usr/include/dav1d/headers.h
 /usr/include/dav1d/picture.h
 /usr/include/dav1d/version.h
+/usr/lib64/haswell/libdav1d.so
 /usr/lib64/libdav1d.so
 /usr/lib64/pkgconfig/dav1d.pc
 
 %files lib
 %defattr(-,root,root,-)
+/usr/lib64/haswell/libdav1d.so.5
+/usr/lib64/haswell/libdav1d.so.5.1.0
 /usr/lib64/libdav1d.so.5
 /usr/lib64/libdav1d.so.5.1.0
 
